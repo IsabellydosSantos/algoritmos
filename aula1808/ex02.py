@@ -1,3 +1,6 @@
-print("Agora são 2 da tarde. O alarme deve tocar daqui a 51 horas")
+hora_atual = int(input("Informe o horário atual (0-23): "))
+alarme = int(input("Daqui a quantas horas o alarme deve tocar? "))
 
-calc =
+hora_alarme = (hora_atual + alarme) % 24
+
+print(f"\nO alarme irá tocar às {hora_alarme}:00 horas")
