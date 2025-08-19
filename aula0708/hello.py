@@ -1,0 +1,1 @@
+msg = string(input("eu amo programar"))
