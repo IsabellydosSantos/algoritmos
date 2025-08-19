@@ -1,29 +1,12 @@
-n1 = int(input("Informe um valor inteiro: "))
-res = n1 % 2
-if (res > 0):
-    n1 = "impar"
-    print("impar")
-else:
-    n1 = "par"
-    print("par")
+n1 = int(input("Informe o primeiro valor inteiro: "))
+n2 = int(input("Informe o segundo valor inteiro: "))
 
-'n2 = int(input("Informe um valor inteiro: "))'
-res2 = n2 % 2
-if (res2 > 0):
-    n2 = "impar"
-    print("impar")
-else:
-    n2 = "par"
-    print("par")
-
-if (n1 and n2 == "impar"):
-    print("False")
-
-elif (n1 and n2 == "par"):
-    print("False")
-
-else:
-    print("True")
-
-
-
+if n1 <= 0 or n2 <= 0:
+    print("Inválido")
+elif n1 != int(n1) or n2 != int(n2):
+    print("Inválido")
+else:  
+    if (n1 % 2) == (n2 % 2):
+     print("False")  # Mesma paridade
+    else:
+     print("True")   # Paridades diferentes
