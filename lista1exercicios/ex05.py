@@ -3,8 +3,9 @@ temp = float(input("Insira a temperatura: "))
 
 if unitemp == "F":
     convC = (5/9) * (temp-32)
-    rounded = round(convC, 2)
+    roundedC = round(convC, 2)
     print("A temperatura {} F em Celsius é {} C".format(temp, convC))
 elif unitemp == "C":
     convF = (temp * 9/5) + 32
+    roundedF = round(convF,2)
     print("A temperatura {} C em Fahrenheit é {} F".format(temp, convF))
