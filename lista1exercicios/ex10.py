@@ -1,19 +1,27 @@
-# Lê a sequência de 5 números separados por vírgula
-entrada = input("Digite 5 números separados por vírgula: ")
+# Solicita ao usuário que digite números separados por vírgula
+entrada = input("Digite números separados por vírgula: ")
 
-# Converte a string em uma lista de números
+# Divide a string de entrada em uma lista de strings usando vírgula como separador
+# Ex: "1,2,3" vira ['1', '2', '3']
 numeros_str = entrada.split(',')
+
+# Converte cada string da lista em número decimal (float)
+# Ex: ['1', '2', '3'] vira [1.0, 2.0, 3.0]
 numeros = [float(num) for num in numeros_str]
 
-# Verifica se a sequência está em ordem crescente
+# Variável que indica se a sequência está ordenada (inicialmente assumimos que está)
 ordenada = True
+
+# Percorre a lista comparando cada número com o próximo
+# range(len(numeros) - 1) garante que não tentaremos acessar índice inexistente
 for i in range(len(numeros) - 1):
+    # Se encontrar um número maior que o próximo, a sequência não está ordenada
     if numeros[i] > numeros[i + 1]:
         ordenada = False
-        break
+        break  # Interrompe o loop antecipadamente (otimização)
 
-# Exibe o resultado
+# Verifica o resultado e exibe a mensagem apropriada
 if ordenada:
     print("A sequência está ordenada de forma crescente.")
 else:
-    print("A sequência NÃO está ordenada de forma crescente.")
+    print("A sequência não está ordenada de forma crescente.")
