@@ -1,5 +1,3 @@
-# Programa para calcular a soma dos números pares em uma sequência
-
 # Solicita ao usuário o número total de elementos da sequência
 n = int(input("Digite a quantidade de números: "))
 
