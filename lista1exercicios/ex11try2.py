@@ -1,7 +1,5 @@
-# Solicita ao usuário um número inteiro positivo e converte para int
 n = int(input("Digite um número inteiro positivo: "))
 
-# Exibe uma mensagem informativa usando f-string
 # Mostra até qual número será a busca por ímpares
 print(f"Números ímpares até {n}:")
 
