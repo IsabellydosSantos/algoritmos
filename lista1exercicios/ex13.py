@@ -1,6 +1,3 @@
-# Programa para converter número decimal em binário
-
-# Solicita ao usuário um número inteiro decimal
 numero_decimal = int(input("Digite um número inteiro decimal: "))
 
 # Armazena o número original para exibição posterior
