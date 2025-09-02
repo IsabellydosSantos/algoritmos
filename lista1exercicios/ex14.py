@@ -6,8 +6,7 @@ numeros = [float(num.strip()) for num in numeros_str]
 
 # Verifica se foram digitados exatamente três números
 if len(numeros) != 3:
-    print("Erro: Você deve digitar exatamente três números!")
-    print(f"Você digitou {len(numeros)} número(s).")
+    print("Erro: Você deve digitar exatamente três números")
 else:
     # Usa as funções max() e min() para encontrar maior e menor
     maior = max(numeros)
