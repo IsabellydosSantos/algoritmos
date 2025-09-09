@@ -18,6 +18,7 @@ ordenada = True
 
 #percorre a lista comparando cada número com o próximo
 #range(len(numeros) - 1) garante que não haverão mais comparações que o necessário
+#"len" lê a quantidade de números no conjunto (numeros)
 for i in range(len(numeros) - 1):
     #se encontrar um número maior que o próximo, a sequência não está ordenada
     if numeros[i] > numeros[i + 1]:
