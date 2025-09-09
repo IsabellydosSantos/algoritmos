@@ -1,3 +1,5 @@
+# Recebe um número e o converte para sua base binária mostrando o passo a passo
+
 print("=== CONVERSOR DECIMAL PARA BINÁRIO ===")
 
 # Passo 1: Pedir o número decimal
@@ -10,7 +12,7 @@ print("Método: Divisões sucessivas por 2")
 print("Cada resto será um dígito binário")
 print("-" * 40)
 
-# Passo 3: Mostrar cada divisão passo a passo
+# Passo 3: Mostrar cada divisão
 restos = []  # Lista para guardar os restos (dígitos binários)
 
 contador = 1
@@ -30,9 +32,9 @@ while numero_decimal > 0:
     contador += 1
 
 # Passo 4: Explicar que precisamos inverter os restos
-print("\nAgora vamos ler os restos de BAIXO para CIMA:")
+print("\nAgora vamos ler os restos de baixo para cima:")
 print("Restos coletados:", restos)
-print("Invertendo a ordem...")
+print("Invertendo a ordem: ")
 
 # Inverte a lista de restos
 binario_invertido = restos[::-1]
