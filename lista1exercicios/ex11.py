@@ -2,11 +2,14 @@
 
 n = int(input("Digite um número inteiro positivo: "))
 
+print(f"Os {n} primeiros números ímpares são: ")
+
 #loop que repete 'n' vezes (de 0 até n-1)
 for i in range(n):
     #fórmula matemática para gerar números ímpares:
     numero_impar = 2 * i + 1
     
     #end=" " → substitui a quebra de linha padrão por espaço
-    print(f"Os {n} primeiros números ímpares são: ", numero_impar, end=" ")
+    print(numero_impar, end=" ")
+
 
