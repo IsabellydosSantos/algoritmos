@@ -1,4 +1,4 @@
-#converte um número dado em sua base binária 
+#recebe um número e o converte em sua base binária 
 
 numero_decimal = int(input("Digite um número inteiro decimal: "))
 
@@ -25,3 +25,4 @@ else:
     numero_binario = ''.join(digitos_binarios[::-1])
     
     print(f"O número {numero_original} em binário é: {numero_binario}")
+
