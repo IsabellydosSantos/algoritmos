@@ -12,7 +12,7 @@ ordenada = True
 
 #percorre a lista comparando cada número com o próximo
 #range(len(numeros) - 1) garante que não haverão mais comparações que necessário
-#len indica a quantidade de números na lista (numeros)
+#"len" lê a quantidade de números no conjunto (numeros)
 for i in range(len(numeros) - 1):
     #se encontrar um número maior que o próximo, a sequência não está ordenada
     if numeros[i] > numeros[i + 1]:
@@ -23,4 +23,5 @@ if ordenada:
     print("A sequência está ordenada de forma crescente.")
 else:
     print("A sequência não está ordenada de forma crescente.")
+
 
