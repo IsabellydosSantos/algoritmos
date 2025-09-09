@@ -1,4 +1,4 @@
-#recebe um número n, depois lê uma sequência de n números e informa se está em ordem crescente ou decrescente
+#Recebe um número n, depois lê uma sequência de n números e informa se está em ordem crescente ou não 
 
 n = int(input("Digite um número inteiro: ")) 
 entrada = input(f"Digite {n} números separados por vírgula: ")
@@ -6,6 +6,10 @@ entrada = input(f"Digite {n} números separados por vírgula: ")
 # Divide a string de entrada em uma lista de strings usando vírgula como separador
 numeros_str = entrada.split(',')
 
+if len(numeros_str) != n: #se o usuário digitar mais números que o estipulado
+    print(f"Erro: Você deve digitar exatamente {n} números")
+else:
+    try:
 # Converte cada string da lista em número decimal (float)
 numeros = [float(num) for num in numeros_str]
 
