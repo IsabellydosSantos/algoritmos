@@ -1,3 +1,5 @@
+# Calcula o mdc dos números m e n
+
 print("=== CALCULADORA DE MDC (Máximo Divisor Comum) ===")
 
 # Passo 1: Pedir os dois números
@@ -38,3 +40,4 @@ while b != 0:
 # Passo 3: Mostrar o resultado
 print(f"Resultado final: ")
 print(f"MDC({num1}, {num2}) = {a}")
+
