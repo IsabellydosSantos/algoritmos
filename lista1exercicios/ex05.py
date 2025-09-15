@@ -6,9 +6,8 @@ temp = float(input("Insira a temperatura: "))
 if unitemp == "F": #converte a temperatura de Fahrenheit para Celsius 
     convC = (5/9) * (temp-32) #fórmula de conversão 
     roundedC = round(convC, 2) #arredonda o valor final para duas casas decimais após a vírgula 
-    print("A temperatura {} F em Celsius é {}° C".format(temp, roundedC))
+   print(f"A temperatura {temp} F em Celsius é {roundedC} C")
 elif unitemp == "C": #converte a temperatura de Celsius para Fahrenheit
     convF = (temp * 9/5) + 32 #fórmula de conversão
     roundedF = round(convF, 2) #arredonda o valor final para duas casas decimais após a vírgula 
-    print("A temperatura {}° C em Fahrenheit é {} F".format(temp, roundedF))
-
+  print(f"A temperatura {temp} C em Fahrenheit é {roundedF} F")
