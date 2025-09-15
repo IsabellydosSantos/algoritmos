@@ -14,7 +14,9 @@ else: #se não tem todos os lados iguais e nem todos os lados diferentes
     print("O triângulo é isósceles")
 
 #Calcula a área
-calcarea = (la + lb + lc)/2
+s = (la + lb + lc)/2
+fheron = s * (s-la) * (s-lb) * (s-lc)
+raiz = math.sqrt(fheron)
 
+print("A área do triângulo é: ", raiz)
 
-print("A área do triângulo é: ", calcarea)
