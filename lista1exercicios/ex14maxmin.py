@@ -1,4 +1,4 @@
-#lê três números e imprime o maior e o menor deles
+#lê três números e imprime o maior e o menor deles usando as funções max e min
 
 entrada = input("Digite três números separados por vírgula (ex: 10,5,8): ")
 
@@ -18,4 +18,5 @@ else:
     print(f"\nEntre os números {numeros[0]}, {numeros[1]} e {numeros[2]}:")
     print(f"O maior número é: {maior}")
     print(f"O menor número é: {menor}")
+
 
