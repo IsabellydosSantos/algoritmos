@@ -14,6 +14,6 @@ contador = 0
 for numero in lista1:
     if numero in lista2:
         contador += 1
-    print(f"{numero} aparece em ambas listas")
+        print(f"{numero} aparece em ambas listas")
 
 print(f"As listas tem {contador} números em comum")
