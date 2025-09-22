@@ -76,4 +76,46 @@ Número A múltiplo de número B
 # Também é possível usar if else para esse programa 
 
 Número Fatorial:
-• fatorial 
+• fat * n
+• n = n - 1
+# Utilizado com a funcao while
+Exemplo 
+
+n = int(input("Entre com um número inteiro positivo: "))
+fat = 1 # Variável que armazenará o resultado do fatorial, começa com 1 pois é o elemento neutro da multiplicação 
+while n > 1:
+    fat = fat * n # Começa multiplicando 1 por n
+    n = n - 1 # Depois armazena n como n - 1 e quando o loop se repetir, vai fazer o resultado de fat × n
+# Ex. se n = 5, fat = 1 × 5 e n = 5 - 1 = 4
+# Na próxima repetição, fat = 5 × 4 e n = 4 - 1 = 3, e assim por diante
+print("Resultado:", fat)
+
+
+Tabuada: 
+• resultado = n * i
+
+Exemplo 
+
+n = int(input("Insira um número para ver sua tabuada: "))
+
+print(f"Tabuada de {n}:")
+for i in range(1, 11):  # De 1 a 10
+    resultado = n * i
+    print(f"{n} × {i} = {resultado}")
+
+
+Média (usando for):
+• soma += n
+• media = soma / quant
+
+Exemplo
+
+quant = int(input("Deseja calcular a média de quantos números? "))
+soma = 0 # Variável que armazenará a soma total dos números 
+
+for i in range(quant):
+    n = float(input(f"Digite o {i+1}º número: "))
+    soma += n # Acumula o número n digitado e adiciona a soma
+
+media = soma / quant # Calcula a média final
+print(f"Média: {media:.2f}")
