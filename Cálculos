@@ -1,0 +1,8 @@
+Número par:
+• número % 2 == 0
+# Se o resto da divisão de um número por 2 for 0, ele é par
+
+
+Número ímpar:
+• número % 2 != 0
+# Se o resto da divisão de um número por 2 for diferente de 0, ele é ímpar
