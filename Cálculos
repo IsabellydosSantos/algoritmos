@@ -6,3 +6,8 @@ Número par:
 Número ímpar:
 • número % 2 != 0
 # Se o resto da divisão de um número por 2 for diferente de 0, ele é ímpar
+
+
+Divisores de um Número:
+• n % i == 0:
+# O i se repete até chegar no número n (ex. se n = 12, i se repete até chegar a 12)
