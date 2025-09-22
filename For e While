@@ -1,0 +1,167 @@
+FOR
+
+Exemplo 1: FOR com range básico
+
+# Imprime números de 0 a 4
+for i in range(5):
+    print(i)
+# Output: 0, 1, 2, 3, 4
+
+
+Exemplo 2: FOR com range personalizado
+
+# Números de 2 a 10, pulando de 2 em 2
+for i in range(2, 11, 2):
+    print(i)
+# Output: 2, 4, 6, 8, 10
+
+
+Exemplo 3: FOR com lista de strings
+
+frutas = ["maçã", "banana", "uva", "laranja"]
+for fruta in frutas:
+    print(f"Eu gosto de {fruta}")
+# Output:
+# Eu gosto de maçã
+# Eu gosto de banana
+# Eu gosto de uva
+# Eu gosto de laranja
+
+
+Exemplo 4: FOR com condição if else
+
+numeros = [1, 2, 3, 4, 5, 6]
+for num in numeros:
+    if num % 2 == 0:  # Verifica se é par
+        print(f"{num} é par")
+    else:
+        print(f"{num} é ímpar")
+# Output:
+# 1 é ímpar
+# 2 é par
+# 3 é ímpar
+# 4 é par
+# 5 é ímpar
+# 6 é par
+
+
+WHILE 
+
+Exemplo 1: WHILE básico com contador
+
+contador = 1
+while contador <= 5:
+    print(f"Contagem: {contador}")
+    contador += 1  # Incrementa o contador
+# Output:
+# Contagem: 1
+# Contagem: 2
+# Contagem: 3
+# Contagem: 4
+# Contagem: 5
+
+
+Exemplo 2: WHILE com entrada do usuário
+
+senha_correta = "python123"
+senha = ""
+
+while senha != senha_correta:
+    senha = input("Digite a senha: ")
+    if senha != senha_correta:
+        print("Senha incorreta! Tente novamente.")
+
+print("Acesso permitido!")
+
+
+Exemplo 3: WHILE com lista (removendo elementos)
+
+lista = [1, 2, 3, 4, 5]
+while lista:  # Enquanto a lista não estiver vazia
+    elemento = lista.pop()
+    print(f"Removido: {elemento}")
+# Output:
+# Removido: 5
+# Removido: 4
+# Removido: 3
+# Removido: 2
+# Removido: 1
+
+
+Exemplo 4: WHILE com condição 
+
+numero = 1
+soma = 0
+
+while soma < 20:  # Para quando soma atingir ou passar de 20
+    soma += numero
+    print(f"Número: {numero}, Soma acumulada: {soma}")
+    numero += 1
+# Output:
+# Número: 1, Soma acumulada: 1
+# Número: 2, Soma acumulada: 3
+# Número: 3, Soma acumulada: 6
+# continua até soma >= 20
+
+Exemplo 5: WHILE com break
+
+contador = 0
+while True:  # Loop infinito
+    print(contador)
+    contador += 1
+    if contador >= 5:
+        break  # Sai do loop quando contador >= 5
+# Output: 0, 1, 2, 3, 4
+
+
+FOR vs WHILE - Comparação Prática
+
+Mesma tarefa com FOR e WHILE:
+
+Com FOR:
+
+# Soma os primeiros 5 números com FOR
+soma = 0
+for i in range(1, 6):
+    soma += i
+print(f"Soma com FOR: {soma}")  # Output: 15
+
+
+Com WHILE:
+
+# Soma os primeiros 5 números com WHILE
+soma = 0
+i = 1
+while i <= 5:
+    soma += i
+    i += 1
+print(f"Soma com WHILE: {soma}")  # Output: 15
+
+
+Dica Importante:
+
+· Use FOR quando você sabe quantas iterações precisa
+· Use WHILE quando a parada depende de uma condição específica
+
+Exemplo
+
+# Programa que usa FOR, WHILE e MAP
+print("=== PROGRAMA INTEGRADO ===")
+
+# FOR: Processar lista fixa
+produtos = ["mouse", "teclado", "monitor"]
+print("Lista de produtos:")
+for i, produto in enumerate(produtos, 1):
+    print(f"{i}. {produto}")
+
+# WHILE: Entrada até condição satisfeita
+numero = 0
+while numero not in [1, 2, 3]:
+    numero = int(input("Escolha um produto (1-3): "))
+
+# MAP: Transformar dados
+precos = [50.0, 120.0, 800.0]
+precos_com_desconto = list(map(lambda p: p * 0.9, precos))  # 10% de desconto
+
+print(f"Produto escolhido: {produtos[numero-1]}")
+print(f"Preço com desconto: R$ {precos_com_desconto[numero-1]:.2f}")
