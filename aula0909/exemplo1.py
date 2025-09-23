@@ -3,5 +3,6 @@ lista[2:4] = ["A", "B"]
 print(lista)
 lista[2:4] = [8, 8, 8]
 print(lista)
-lista[4:6] = [ ]
+lista[4:6] = [ ] #último elemento não inclui
 print(lista)
+
