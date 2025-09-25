@@ -23,10 +23,15 @@ else:
             divisor += 1
         
         # Se for primo, adiciona à soma e incrementa o contador
-        if eh_primo:
+               if eh_primo:
+            if contador == 0:
+                print(numero, end="")
+            else:
+                print(f" + {numero}", end="")
             soma += numero
             contador += 1
         
         numero += 1
     
     print(f"A soma dos {n} primeiros números primos é: {soma}")
+
