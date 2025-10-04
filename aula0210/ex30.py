@@ -1,5 +1,5 @@
 n = int(input("Quantidade de lançamentos: "))
-r = int(input(f"Digite os {n} resultados (1-6) separados por vírgulas:"))
+r = input(f"Digite os {n} resultados (1-6) separados por vírgulas:").strip()
 resultados = list(map(int, r.split(',')))
 
 # Verificações básicas
@@ -23,8 +23,6 @@ for face in resultados:
     else:
         # Se não estiver: cria entrada com valor 1
         contagem[face] = 1
-    
-    print(f"  Dicionário atual: {contagem}")
 
 # PASSO 3: Mostrar resultados organizados
 print("\n=== Resultado Final ===")
@@ -45,4 +43,5 @@ if diferenca > freq_esperada * 0.7:
   print("⚠️  Possível dado viciado")
 else:
     print("✓  Dado parece honesto")
+
 
