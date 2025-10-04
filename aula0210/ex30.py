@@ -1,6 +1,6 @@
 n = int(input("Quantidade de lançamentos: "))
-print(f"Digite os {n} resultados (1-6) separados por vírgulas:")
-resultados = list(map(int, input().split(',')))
+r = int(input(f"Digite os {n} resultados (1-6) separados por vírgulas:"))
+resultados = list(map(int, r.split(',')))
 
 # Verificações básicas
 if len(resultados) != n:
@@ -45,3 +45,4 @@ if diferenca > freq_esperada * 0.7:
   print("⚠️  Possível dado viciado")
 else:
     print("✓  Dado parece honesto")
+
