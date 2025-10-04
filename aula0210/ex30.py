@@ -35,7 +35,6 @@ mais = max(contagem.values()) # Face que mais apareceu
 menos = min(contagem.values()) # Face que menos apareceu
 diferenca = mais - menos # Calcula o desequilíbrio 
 
-print(f"\nAnálise:")
 print(f"Diferença máxima: {diferenca}")
 
 if diferenca > freq_esperada * 0.7:
@@ -43,6 +42,7 @@ if diferenca > freq_esperada * 0.7:
   print("⚠️  Possível dado viciado")
 else:
     print("✓  Dado parece honesto")
+
 
 
 
