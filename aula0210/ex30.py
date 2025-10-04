@@ -42,7 +42,3 @@ if diferenca > freq_esperada * 0.7:
   print("⚠️  Possível dado viciado")
 else:
     print("✓  Dado parece honesto")
-
-
-
-
