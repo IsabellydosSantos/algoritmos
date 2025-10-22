@@ -6,13 +6,10 @@ conjunto2 = [int(x) for x in c2.split()]
     
 conjunto3 = conjunto1 + conjunto2
     
-#remove as duplicatas convertendo
-uniao = set(conjunto3))
+#remove as duplicatas e converte de volta para lista 
+uniao = list(set(conjunto3))
     
-# Ordena o resultado para ficar mais organizado
+#ordena em ordem crescente
 uniao.sort()
     
-# Exibe os resultados
 print(f"União dos conjuntos: {uniao}")
-      
-
