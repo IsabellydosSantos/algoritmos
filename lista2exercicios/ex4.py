@@ -1,3 +1,4 @@
-texto = str(input("Digite uma string: "))
+texto = input("Digite uma string: ")
 
 print(f"String invertida: {texto[::-1]}")
+
