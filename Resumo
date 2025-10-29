@@ -94,6 +94,21 @@ lista.append(3)
 print(lista)  # Output: [1, 2, 3]
 
 
+list()
+
+· Função: Converte um iterável em lista
+
+lista = list("hello")  # Output: ['h', 'e', 'l', 'l', 'o']
+
+
+list[-1]
+
+· Função: Acessa o último elemento
+
+lista = [10, 20, 30]
+print(lista[-1])  # Output: 30
+
+
 insert()
 
 · Função: Inserir elemento em posição específica
@@ -112,6 +127,21 @@ lista.remove(2)
 print(lista)  # Output: [1, 3, 2]
 
 
+del
+
+· Função: Remover elemento
+
+lista = [10, 20, 30, 40, 50]
+
+# Remove um elemento por índice
+del lista[1]
+print(lista)  # Output  [10, 30, 40, 50]
+
+# Remove uma parte
+del lista[1:3]
+print(lista)  # Output: [10, 50]
+
+
 pop()
 
 · Função: Remover e retornar elemento de posição específica
@@ -120,6 +150,15 @@ lista = [1, 2, 3]
 elemento = lista.pop(1)
 print(elemento)  # Output: 2
 print(lista)     # Output: [1, 3]
+
+
+clear()
+
+· Função: Limpar a lista inteira
+
+lista = [1, 2, 3]
+lista.clear()
+print(lista)  # Output: []
 
 
 sort()
@@ -156,7 +195,218 @@ lista = [10, 20, 30]
 print(lista.index(20))  # Output: 1
 
 
-5. Funções Matemáticas
+Slicing: list[start:stop:step]
+
+· Função: Acessar subconjuntos da lista
+
+lista = [0, 1, 2, 3, 4, 5]
+print(lista[1:4])    # Output: [1, 2, 3] (imprime os valores nas posições de 1 a 3)
+print(lista[::2])    # Output: [0, 2, 4] (pula de 2 em 2)
+print(lista[::-1])   # Output: [5, 4, 3, 2, 1, 0] (inverte)
+
+
+5. Tuplas
+
+· Função: Sequência imutável de elementos
+
+tupla = (1, 2, 3)
+print(tupla[0])  # 1
+# tupla[0] = 5  # Erro! Tuplas são imutáveis
+
+- Funções como "count", "index" e outras que não alteram listas também podem ser usadas nas tuplas 
+
+
+6. Operações com Strings
+
+format()
+
+· Função: Formatar strings
+
+nome = "Maria"
+idade = 17
+print("{} tem {} anos".format(nome, idade))
+
+nome = "Maria"
+idade = 17
+print(f"{nome} tem {idade} anos")
+
+
+strip()
+
+· Função: Eliminar espaços no início e no final da string
+
+texto = "  hello world  "
+print(texto.strip())           # Output: "hello world"
+
+
+split()
+
+· Função: Dividir a string em listas com base em um separador específico
+
+palavras = "python,java,c++".split(",")
+print(palavras)                # Output: ['python', 'java', 'c++']
+
+
+join()
+
+· Função: Unir listas em uma string (é a operação inversa de split)
+
+lista = ['a', 'b', 'c']
+print('-'.join(lista))         # Output: "a-b-c"
+
+
+replace()
+
+Função: Substituir partes da string
+
+texto = "Hello World"
+print(texto.replace("World", "Python"))  # Output: "Hello Python"
+
+
+capitalize()
+
+· Função: Transformar a primeira letra em maiúscula
+
+texto = "hello WORLD"
+print(texto.capitalize())  # Output: "Hello world"
+
+
+upper()
+
+· Função: Transformar todas as letras em maiúsculas 
+
+texto = "hello WORLD"
+print(texto.upper())       # Output: "HELLO WORLD"
+
+
+lower()
+
+· Função: Transformar todas as letras em minúsculas
+
+texto = "hello WORLD"
+print(texto.lower())       # Output: "hello world"
+
+
+isnumeric()
+
+· Função: Verificar se todos os caracteres são números (inclui caracteres especiais)
+
+print("123".isnumeric())   # Output: True
+
+
+isalpha()
+
+· Função: Verificar se todos os caracteres são letras (A-Z)
+
+print("abc".isalpha())     # Output: True
+
+
+isalnum()
+
+· Função: Verificar se todos os caracteres são alfanuméricos (letras ou números)
+
+print("abc123".isalnum())  # Output: True
+
+
+Slicing: string[start:stop:step]
+
+texto = "Python"
+print(texto[1:4])    # Output: "yth"
+print(texto[::-1])   # Output: "nohtyP"
+
+
+7. Dicionários
+
+· Função: Estrutura chave-valor
+
+pessoa = {"nome": "Ana", "idade": 30, "cidade": "SP"}
+
+
+get()
+
+· Função: Acessar valor da chave ou valor padrão se a chave não existir
+
+pessoa = {"nome": "Leo", "idade": 19}
+
+print(pessoa.get("nome"))        # Output: "Leo" (chave existe)
+print(pessoa.get("email"))       # Output: None (chave não existe)
+print(pessoa.get("email", "Não cadastrado")) # Output: "Não cadastrado" (valor padrão)
+
+
+popitem()
+
+· Função: Remover e retornar último par chave-valor
+
+pessoa = {"nome": "Elias", "idade": 35, "cidade": "CG"}
+
+chave, valor = pessoa.popitem()
+print(f"Chave: {chave}, Valor: {valor}")  # Chave: cidade, Valor: CG
+print(pessoa)  # Output: {'nome': 'Elias', 'idade': 35}
+
+chave, valor = pessoa.popitem()
+print(f"Chave: {chave}, Valor: {valor}")  # Chave: idade, Valor: 35
+print(pessoa)  # Output: {'nome': 'Elias'}
+
+
+update()
+
+· Função: Atualizar dicionário 
+
+cadastro = {"nome": "Arthur", "idade": 24}
+
+cadastro.update({"idade": 25, "cidade": "CG"})
+print(cadastro)  # Output: {'nome': 'Arthur', 'idade': 25, 'cidade': 'CG'}
+
+
+keys()
+
+· Função: Retornar as chaves
+
+pessoa = {"nome": "Ana", "idade": 31}
+print(list(pessoa.keys()))    # Output: ['nome', 'idade']
+
+
+values()
+
+· Função: Retornar os valores
+
+pessoa = {"nome": "Ana", "idade": 31}
+print(list(pessoa.values()))  # Output: ['Ana', 31]
+
+
+items()
+
+· Função: Retornar os pares chave-valor
+
+pessoa = {"nome": "Ana", "idade": 31}
+print(list(pessoa.items()))   # Output: [('nome', 'Ana'), ('idade', 31)]
+
+
+copy()
+
+· Função: Criar cópia independente 
+
+original = {"nome": "Joaquim", "hobbies": "ler"}
+
+copia = original.copy()
+
+# Modificar a cópia não afeta o original
+copia["nome"] = "Maria"
+
+print(original)  # Output: {'nome': 'Joaquim', 'hobbies': 'ler'}
+print(copia)     # Output: {'nome': 'Maria', 'hobbies': 'ler'}
+
+
+zip()
+
+Função: Combinar iteráveis
+
+nomes = ["Maria", "Leo"]
+idades = [17, 19]
+print(list(zip(nomes, idades)))  # [('Maria', 27), ('Leo', 19)]
+
+
+8. Funções Matemáticas
 
 sum()
 
@@ -175,7 +425,7 @@ print(min(numeros))  # Output: 1
 print(max(numeros))  # Output: 8
 
 
-6. Operador in
+9. Operador in
 
 · Função: Verificar se o elemento está na lista
 
@@ -184,7 +434,87 @@ print(2 in lista)   # Output: True
 print(4 in lista)   # Output: False
 
 
-7. Tipos de Dados Básicos
+10. Funções de Tipo e Conversão 
+
+type()
+
+· Função: Retornar o tipo do objeto
+
+print(type("hello"))  # Output: <class 'str'>
+print(type([1,2,3]))  # Output: <class 'list'>
+
+
+sort() vs sorted()
+
+lista = [3, 1, 2]
+lista.sort()                    # Modifica a lista original e aceita apenas listas 
+print(lista)                    # Output: [1, 2, 3]
+
+lista = [3, 1, 2]
+nova_lista = sorted(lista)      # Cria nova lista ordenada e aceita qualquer iterável (tuplas, dicionários, etc)
+print(nova_lista)               # Output: [1, 2, 3]
+
+
+reverse() vs reversed()
+
+lista = [1, 2, 3, 4, 5]
+lista.reverse()                 # Modifica a lista original e aceita apenas listas 
+print(lista)                    # Output: [5, 4, 3, 2, 1] 
+
+lista = [1, 2, 3, 4, 5]
+nova_lista = reversed(lista)    # Cria nova lista reversa e aceita qualquer iterável (tuplas, dicionários, etc)
+print(list(nova_lista))         # Output: [5, 4, 3, 2, 1]
+
+
+break
+
+· Função: Interromper loops
+
+for i in range(10):
+    if i == 5:
+        break
+    print(i)  # Output: 0, 1, 2, 3, 4
+
+
+abs()
+
+· Função: Retornar valor absoluto (sempre positivo)
+
+print(abs(-5))   # Output: 5
+print(abs(3.14)) # Output: 3.14
+
+
+map()
+
+· Função: Aplicar função a todos os elementos
+
+Exemplo 1:
+
+entrada = input().split()  # Input: "10 20 30 40"
+numeros = list(map(int, entrada))
+print("Números:", numeros)  # Output: [10, 20, 30, 40]
+
+Exemplo 2:
+
+print("Digite as notas separadas por vírgula:")  # Input: "8.5,7.0,9.0,6.5"
+# Lê os números como strings e converte para float
+notas = list(map(float, input().split(",")))
+print(f"Notas: {notas}")  # Output: Notas: [8.5, 7.0, 9.0, 6.5]
+
+Exemplo 3:
+
+xyz = input("Digite as coordenadas (x,y,z): ")  # Input: 2,1,3
+coordenadas = list(map(int, xyz.split(",")))  
+print(f"Ponto: ({x}, {y}, {z}")  # Output: Ponto: (2, 1, 3)
+
+Exemplo 4:
+
+print("Insira n números inteiros separados por espaço: ")  # Input: 2 0 0 7
+numeros = [int(x) for x in input().split()]
+print(numeros)  # Output: [2, 0, 0, 7]
+
+
+11. Tipos de Dados Básicos
 
 int (inteiro)
 
@@ -210,7 +540,7 @@ verdadeiro = True
 falso = False
 
 
-8. Símbolos Matemáticos
+12. Símbolos Matemáticos
 
 Operadores Aritméticos:
 
