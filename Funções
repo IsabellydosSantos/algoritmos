@@ -2,71 +2,63 @@ Elementos de Funções
 
 1. def 
 
-Cria uma nova função
+· Função: Cria uma nova função para encapsular um bloco de código que pode ser reutilizado múltiplas vezes, organizando melhor o programa e evitando repetição.
 
-Para que serve:
+Exemplo: 
 
-Para encapsular um bloco de código que pode ser reutilizado múltiplas vezes, organizando melhor o programa e evitando repetição.
-
-```python
-# DEF: Define uma nova função
 def calcular_area(largura, altura):
     area = largura * altura
     return area
 
-# USO: Chama a função quando precisar do cálculo
+# Chama a função quando precisar do cálculo
 resultado = calcular_area(5, 3)
-print(resultado)  # Output: 15
-```
 
----
+print(resultado)  # Output: 15
+
 
 2. Argumentos/Parâmetros
 
-O que faz:
-
 São variáveis que recebem valores externos para serem usados dentro da função.
 
-Para que serve:
-
-Permitem que a função trabalhe com dados diferentes a cada chamada, tornando-a flexível e reutilizável.
+· Função: Permitem que a função trabalhe com dados diferentes a cada chamada, tornando-a flexível e reutilizável.
 
 Tipos de Argumentos:
 
 Argumentos Posicionais
 
-```python
-# O QUE FAZ: Os valores são atribuídos na ordem dos parâmetros
-# PARA QUE SERVE: Quando a ordem dos argumentos é fixa e conhecida
+# Os valores são atribuídos na ordem dos parâmetros
+# Usado quando a ordem dos argumentos é fixa e conhecida
+
 def criar_email(nome, sobrenome, dominio):
     return f"{nome}.{sobrenome}@{dominio}"
 
 # Os valores são passados na ordem: nome, sobrenome, dominio
 email = criar_email("joao", "silva", "gmail.com")
+
 print(email)  # Output: joao.silva@gmail.com
-```
 
-Argumentos Nomeados (Keyword Arguments)
 
-```python
-# O QUE FAZ: Os valores são atribuídos pelo nome do parâmetro
-# PARA QUE SERVE: Quando queremos ser explícitos ou mudar a ordem padrão
+Argumentos Nomeados 
+
+# Os valores são atribuídos pelo nome do parâmetro
+# Usado quando queremos ser explícitos ou mudar a ordem padrão
+
 def criar_pessoa(nome, idade, cidade):
     return f"{nome}, {idade} anos, de {cidade}"
 
-# Podemos mudar a ordem usando os nomes dos parâmetros
+# É possível mudar a ordem usando os nomes dos parâmetros
 pessoa1 = criar_pessoa(nome="Maria", cidade="São Paulo", idade=25)
 pessoa2 = criar_pessoa(cidade="Rio", idade=30, nome="Carlos")
 
 print(pessoa1)  # Output: Maria, 25 anos, de São Paulo
 print(pessoa2)  # Output: Carlos, 30 anos, de Rio
-```
 
-Valores Padrão (Default Parameters)
 
-```python
-# O QUE FAZ: Define um valor inicial para parâmetros opcionais
-# PARA QUE SERVE: Para tornar alguns argumentos opcionais na chamada da função
+Valores Padrão 
+
+# Define um valor inicial para parâmetros opcionais
+# Usado para tornar alguns argumentos opcionais na chamada da função
+
 def cumprimentar(nome, saudacao="Olá", pontuacao="!"):
     return f"{saudacao}, {nome}{pontuacao}"
 
@@ -74,44 +66,41 @@ def cumprimentar(nome, saudacao="Olá", pontuacao="!"):
 print(cumprimentar("Ana"))                    # Output: Olá, Ana!
 print(cumprimentar("Pedro", "Oi"))           # Output: Oi, Pedro!
 print(cumprimentar("João", "E aí", "?"))     # Output: E aí, João?
-```
 
----
 
 3. *args (Argumentos Arbitrários)
 
-O que faz:
+· Função: Permite que a função receba um número variável de argumentos posicionais. O * transforma os argumentos em uma tupla.
 
-Permite que a função receba um número VARIÁVEL de argumentos posicionais. O * transforma os argumentos em uma TUPLA.
+# Usado quando não se sabe quantos argumentos a função vai receber, ou quando é necessário uma função flexível que aceite múltiplos valores.
 
-Para que serve:
+# *args captura todos os argumentos posicionais em uma tupla
+# Usado em funções que precisam lidar com quantidade variável de dados
 
-Quando não sabemos quantos argumentos a função vai receber, ou quando queremos uma função flexível que aceite múltiplos valores.
-
-```python
-# O QUE FAZ: *args captura TODOS os argumentos posicionais em uma tupla
-# PARA QUE SERVE: Funções que precisam lidar com quantidade variável de dados
 def somar_numeros(*args):
     """
-    args vira uma TUPLA com todos os argumentos passados
+    args vira uma tupla com todos os argumentos passados
     Exemplo: se chamar somar_numeros(1, 2, 3), args será (1, 2, 3)
     """
     print(f"Args recebido: {args}")  # Mostra a tupla criada
     total = 0
     for numero in args:
-        total += numero
+        total += numero # Percorre cada número na tupla e soma ao total
+
+    print(f"Resultado: {total}")
+    
     return total
 
-# USOS PRÁTICOS:
-print(somar_numeros(1, 2))           # Output: Args: (1, 2), Resultado: 3
-print(somar_numeros(1, 2, 3, 4, 5))  # Output: Args: (1, 2, 3, 4, 5), Resultado: 15
-print(somar_numeros(10))             # Output: Args: (10,), Resultado: 10
+# Usos:
+print(somar_numeros(1, 2))           # Output: Args recebido: (1, 2), Resultado: 3
+print(somar_numeros(1, 2, 3, 4, 5))  # Output: Args recebido: (1, 2, 3, 4, 5), Resultado: 15
+print(somar_numeros(10))             # Output: Args recebido: (10,), Resultado: 10
 
-# EXEMPLO REAL: Criar lista de compras
+# Exemplo: Criar lista de compras
 def lista_compras(*itens):
     print("Itens para comprar:")
-    for i, item in enumerate(itens, 1):
-        print(f"{i}. {item}")
+    for i, item in enumerate(itens, 1):  # A função enumerate() pega a tupla itens e numera cada elemento. O "1" no final faz com que a contagem comece do índice 1 em vez do 0.
+        print(f"{i}. {item}")  # Para cada iteração do loop, i recebe o índice (posição) e item recebe o valor.
 
 lista_compras("pão", "leite", "ovos", "café")
 # Output:
@@ -120,50 +109,37 @@ lista_compras("pão", "leite", "ovos", "café")
 # 2. leite
 # 3. ovos
 # 4. café
-```
 
----
 
-4. **kwargs (Keyword Arguments Arbitrários)
+4. **kwargs (Argumentos de Palavra-chave Arbitrários)
 
-O que faz:
+· Função: Permite que a função receba um número variável de argumentos nomeados. O ** transforma os argumentos em um dicionário.
 
-Permite que a função receba um número VARIÁVEL de argumentos NOMEADOS. O ** transforma os argumentos em um DICIONÁRIO.
+# Usado para que a função aceite configurações opcionais ou parâmetros com nomes arbitrários.
 
-Para que serve:
+# **kwargs captura todos os argumentos (pares chave-valor) nomeados em um dicionário
+# Usado em funções que precisam de muitas configurações opcionais
 
-Quando queremos que a função aceite configurações opcionais ou parâmetros com nomes arbitrários.
-
-```python
-# O QUE FAZ: **kwargs captura TODOS os argumentos nomeados em um dicionário
-# PARA QUE SERVE: Para funções que precisam de muitas configurações opcionais
 def criar_perfil(**kwargs):
     """
-    kwargs vira um DICIONÁRIO com todos os argumentos nomeados
+    kwargs vira um dicionário com todos os argumentos nomeados
     Exemplo: criar_perfil(nome="Ana", idade=25) → kwargs = {'nome': 'Ana', 'idade': 25}
     """
     print(f"Dados recebidos: {kwargs}")
-    
-    perfil = ""
-    for chave, valor in kwargs.items():
-        perfil += f"{chave}: {valor}\n"
-    return perfil
 
-# USOS PRÁTICOS:
+# Usos:
 print(criar_perfil(nome="Maria", idade=30))
 # Output:
-# Dados: {'nome': 'Maria', 'idade': 30}
-# nome: Maria
-# idade: 30
+# Dados recebidos: {'nome': 'Maria', 'idade': 30}
 
 print(criar_perfil(nome="João", profissao="Engenheiro", cidade="SP", pais="Brasil"))
 # Output:
 # Dados: {'nome': 'João', 'profissao': 'Engenheiro', 'cidade': 'SP', 'pais': 'Brasil'}
 
-# EXEMPLO REAL: Configuração de conexão com banco de dados
+# Exemplo: Configuração de conexão com banco de dados
 def conectar_banco(**config):
     """Conecta ao banco com configurações flexíveis"""
-    host = config.get('host', 'localhost')  # Valor padrão se não existir
+    host = config.get('host', 'localhost')  # Valores padrão se não existir são "localhost:5432 como admin"
     porta = config.get('porta', 5432)
     usuario = config.get('usuario', 'admin')
     
@@ -175,26 +151,20 @@ conectar_banco(host="meuservidor.com", porta=3306)
 
 conectar_banco(host="192.168.1.1", usuario="root", senha="123456", banco="clientes")
 # Output: Conectando em 192.168.1.1:5432 como root
-```
 
----
 
 5. return - Retorno de Valores
 
-O que faz:
+· Função: Encerra a execução da função e devolve um valor
 
-Encerra a execução da função e devolve um valor para quem a chamou.
+# Usado para que a função possa produzir um resultado que pode ser usado em outras partes do programa.
 
-Para que serve:
+# Transfere um valor de volta para o código que chamou a função
+# Usado para obter resultados de processamentos feitos na função
 
-Para que a função possa produzir um resultado que pode ser usado em outras partes do programa.
-
-```python
-# O QUE FAZ: Transfere um valor de volta para o código que chamou a função
-# PARA QUE SERVE: Para obter resultados de processamentos feitos na função
 def calcular_imc(peso, altura):
     imc = peso / (altura ** 2)
-    return imc  # ← Devolve o resultado do cálculo
+    return imc  # Devolve o resultado do cálculo
 
 # O valor retornado pode ser armazenado em variável
 meu_imc = calcular_imc(70, 1.75)
@@ -209,95 +179,42 @@ def apenas_imprime(mensagem):
     print(mensagem)
     # Não tem return → retorna None
 
-resultado = apenas_imprime("Olá")
-print(resultado)  # Output: None
-```
-
----
 
 6. Variáveis Locais vs Globais
 
 Variáveis Locais
 
-O que faz: Existem apenas dentro da função.
-Para que serve:Isolar dados temporários que só são relevantes durante a execução da função.
+· Existem apenas dentro da função.
+
+· Função: Isolar dados temporários que só são relevantes durante a execução da função.
 
 Variáveis Globais
 
-O que faz: Existem em todo o programa.
-Para que serve:Compartilhar dados entre diferentes funções e partes do programa.
+· Existem em todo o programa.
 
-```python
-# VARIÁVEL GLOBAL
+· Função: Compartilhar dados entre diferentes funções e partes do programa.
+
+# Variável global
 contador_global = 0
 
 def incrementar_local():
-    # VARIÁVEL LOCAL - só existe aqui dentro
+    # Variável local - só existe dentro dessa função 
     contador_local = 0
     contador_local += 1
     return contador_local
+# Toda vez que a função é chamada, a variável local reinicia do zero, logo o resultado será sempre 1
 
 def incrementar_global():
-    # Para MODIFICAR variável global, preciso declarar
+    # Para modificar variável global, é preciso declarar
     global contador_global
     contador_global += 1
     return contador_global
+# Toda vez que a função é chamada, a variável global é alterada, armazenando um novo valor
 
-# Testando
+# Exemplo
 print("Locais:", incrementar_local())  # Output: 1
 print("Locais:", incrementar_local())  # Output: 1 (sempre reinicia)
 
 print("Globais:", incrementar_global())  # Output: 1
 print("Globais:", incrementar_global())  # Output: 2 (mantém o valor)
-```
 
----
-
-7. **Combinação de *args e kwargs
-
-```python
-# O QUE FAZ: Aceita qualquer combinação de argumentos
-# PARA QUE SERVE: Para funções extremamente flexíveis
-def funcao_flexivel(*args, **kwargs):
-    print(f"Argumentos posicionais: {args}")
-    print(f"Argumentos nomeados: {kwargs}")
-
-funcao_flexivel(1, 2, 3, nome="João", idade=25)
-# Output:
-# Argumentos posicionais: (1, 2, 3)
-# Argumentos nomeados: {'nome': 'João', 'idade': 25}
-
-# EXEMPLO PRÁTICO: Sistema de logging
-def log_mensagem(mensagem, *args, **kwargs):
-    """Registra mensagens com metadados flexíveis"""
-    print(f"MENSAGEM: {mensagem}")
-    
-    if args:
-        print("Dados adicionais:", args)
-    
-    if kwargs:
-        print("Metadados:")
-        for chave, valor in kwargs.items():
-            print(f"  {chave}: {valor}")
-
-log_mensagem("Erro no sistema", "arquivo.txt", "linha 45", 
-             usuario="admin", nivel="ALTO", timestamp="2024-01-01")
-# Output:
-# MENSAGEM: Erro no sistema
-# Dados adicionais: ('arquivo.txt', 'linha 45')
-# Metadados:
-#   usuario: admin
-#   nivel: ALTO
-#   timestamp: 2024-01-01
-```
-
-Resumo Final
-
-Elemento O que Faz Para que Serve
-def Cria função Organizar e reutilizar código
-Argumentos Recebe dados externos Tornar função flexível
-*args Captura múltiplos valores Trabalhar com quantidade variável de dados
-**kwargs Captura múltiplos pares chave-valor Aceitar configurações flexíveis
-return Devolve resultado Obter outputs da função
-Locais Variáveis internas Isolar dados temporários
-Globais Variáveis compartilhadas Compartilhar dados entre funções
