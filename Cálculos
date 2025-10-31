@@ -37,8 +37,24 @@ if len(divisores) == 2:
 else:
     print(f"{n} não é primo")
 
+# Outra forma de encontrar os números primos
+
+primo = True
+for divisor in range(2, int(n∗∗ 0.5)+1):
+if n % divisor == 0:
+primo = False
+break
+
+# Assume inicialmente que o número é primo 
+# n**0.5 é a raiz quadrada de n
+# int() converte para inteiro 
+# +1 para incluir o último número no range
+# Se um número n tem um divisor maior que sua raiz quadrada, ele deve ter um divisor menor que sua raiz quadrada
+# Se o programa achar outro divisor, assume que o número não é primo e para o laço for
+
 
 Fatoração em números primos:
+
 Exemplo
 
 n = int(input("Insira um número inteiro positivo (n>1): "))
@@ -55,6 +71,7 @@ while n > 1:
         n = n // divisor # Faz a divisão inteira de n por 2
     else:
         divisor += 1 # Se n não for mais divisível por 2, é adicionado 1 ao divisor, e assim por diante
+
 # Ex. 30 ÷ 2 = 15
 # 15 não é divisível por 2, então o programa faz a divisão de 15 pelo número seguinte a 2
 # 15 ÷ 3 = 5 
@@ -78,7 +95,7 @@ Número A múltiplo de número B
 Número Fatorial:
 • fat * n
 • n = n - 1
-# Utilizado com a funcao while
+# Utilizado com a função while
 Exemplo 
 
 n = int(input("Entre com um número inteiro positivo: "))
