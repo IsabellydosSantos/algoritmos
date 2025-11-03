@@ -1,8 +1,6 @@
 Matrizes
 
-O que é uma Matriz?
-
-Uma matriz é uma estrutura de dados bidimensional organizada em linhas e colunas. Em Python, não existe um tipo nativo "matriz", mas podemos representá-las usando:
+Em Python, não existe um tipo nativo "matriz", mas podemos representá-las usando:
 
 1. Listas de listas (Python puro)
 2. Arrays do NumPy (biblioteca especializada)
