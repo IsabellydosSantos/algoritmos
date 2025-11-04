@@ -7,7 +7,7 @@ def mdc(a, b):
         resto = a % b
         a, b = b, resto
 
-        return a
+    return a
 
 def main():
     try:
