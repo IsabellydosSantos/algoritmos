@@ -11,7 +11,9 @@ def mdc(a, b):
 
 def mmc(a, b):
     mdc_valor = mdc(a, b)
+    
     return (a * b) // mdc_valor
+    
 def main():
     try:
         n1 = int(input("Insira o primeiro número inteiro positivo: "))
@@ -35,3 +37,4 @@ def main():
 
 
 main()
+
