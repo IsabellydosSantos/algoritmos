@@ -1,76 +1,43 @@
-def analisar_zeros_matriz():
-
-    import ast
-    
-    print("Digite a matriz quadrada no formato: [[a11, a12], [a21, a22]]")
-    
-    try:
-        entrada = input("Digite a matriz: ")
-        matriz = ast.literal_eval(entrada)
-        
-        # Tenta contar com ambas as funções
-        zeros_numpy, porcentagem_numpy = contar_zeros_numpy(matriz)
-        zeros_simples, porcentagem_simples = contar_zeros_simples(matriz)
-        
-        # Exibe resultados
-        print(f"\nMatriz {len(matriz)}x{len(matriz)}:")
-        for linha in matriz:
-            print(f"  {linha}")
-        
-        print(f"\nResultados:")
-        print(f"Com NumPy: {zeros_numpy} zeros ({porcentagem_numpy:.2f}%)")
-        print(f"Sem NumPy: {zeros_simples} zeros ({porcentagem_simples:.2f}%)")
-        
-        return matriz, zeros_simples, porcentagem_simples
-        
-    except ValueError as e:
-        print(f"Erro: {e}")
-    except SyntaxError:
-        print("Erro: Formato inválido. Use o formato: [[1, 0], [0, 2]]")
-    except Exception as e:
-        print(f"Erro inesperado: {e}")
-    
-    return None, 0, 0
-
-
-def contar_zeros_simples(matriz):
+def contar_zeros_matriz():
     """
-    Conta o número de zeros em uma matriz quadrada sem usar NumPy.
-    
-    Args:
-        matriz: Lista de listas representando a matriz quadrada
-    
-    Returns:
-        tuple: (quantidade_zeros, porcentagem_zeros)
-    
-    Raises:
-        ValueError: Se a matriz não for quadrada
+    Versão super simples com entrada do usuário.
     """
-    # Verifica se é uma matriz quadrada
-    if not isinstance(matriz, list) or len(matriz) == 0:
-        raise ValueError("Matriz inválida")
+    print("Digite a matriz linha por linha.")
+    print("Exemplo para 3x3:")
+    print("1 0 3")
+    print("0 5 0") 
+    print("7 0 9")
+    print()
     
-    if not all(isinstance(linha, list) for linha in matriz):
-        raise ValueError("Matriz inválida")
+    matriz = []
+    print("Digite cada linha separada por espaços:")
     
-    num_linhas = len(matriz)
-    num_colunas = len(matriz[0])
+    # Lê a primeira linha para saber o tamanho
+    primeira_linha = input("Linha 1: ").split()
+    n = len(primeira_linha)
+    matriz.append([int(x) for x in primeira_linha])
     
-    if num_linhas != num_colunas:
-        raise ValueError("A matriz fornecida não é quadrada")
-    
-    if not all(len(linha) == num_colunas for linha in matriz):
-        raise ValueError("Matriz com linhas de tamanhos diferentes")
+    # Lê as demais linhas
+    for i in range(1, n):
+        linha = input(f"Linha {i+1}: ").split()
+        if len(linha) != n:
+            print("Erro: Todas as linhas devem ter o mesmo tamanho!")
+            return
+        matriz.append([int(x) for x in linha])
     
     # Conta os zeros
     zeros = 0
-    total_elementos = num_linhas * num_colunas
-    
     for linha in matriz:
-        for elemento in linha:
-            if elemento == 0:
+        for num in linha:
+            if num == 0:
                 zeros += 1
     
-    porcentagem = (zeros / total_elementos) * 100
+    # Mostra resultados
+    print(f"\nMatriz {n}x{n}:")
+    for linha in matriz:
+        print(linha)
     
-    return zeros, porcentagem
+    print(f"\nZeros: {zeros} de {n*n} elementos ({(zeros/(n*n))*100:.1f}%)")
+
+
+contar_zeros_matriz()
