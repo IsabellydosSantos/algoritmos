@@ -1,16 +1,8 @@
 def analisar_zeros_matriz():
-    """
-    Função completa para receber matriz e contar zeros.
-    """
+
     import ast
     
-    print("Contador de Zeros em Matriz Quadrada")
-    print("=" * 40)
     print("Digite a matriz quadrada no formato: [[a11, a12], [a21, a22]]")
-    print("Exemplos:")
-    print("  [[1, 0, 3], [0, 5, 0], [7, 0, 9]]")
-    print("  [[0, 2], [3, 0]]")
-    print()
     
     try:
         entrada = input("Digite a matriz: ")
