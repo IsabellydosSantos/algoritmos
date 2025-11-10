@@ -1,5 +1,5 @@
-texto = str(input("Digite um texto: ")).lower().strip()
-palavra = str(input("Digite uma palavra: ")).lower()
+texto = input("Digite um texto: ").lower().strip()
+palavra = input("Digite uma palavra: ").lower()
 
 palavras = texto.split()
 quant = palavras.count(palavra)
