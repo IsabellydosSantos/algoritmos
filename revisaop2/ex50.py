@@ -20,7 +20,7 @@ def main():
         if n < 0:
             print("Digite apenas números positivos")
 
-        resultado, i = num_tri(n)
+        resultado = num_tri(n)
 
         if resultado:
             print(f"O número {n} é triangular e é formado por {i} * {i+1} * {i+2}")
@@ -29,6 +29,7 @@ def main():
 
     except ValueError:
         print("Digite apenas números inteiros")
+
 
 
 main()
