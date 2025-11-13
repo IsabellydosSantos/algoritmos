@@ -136,3 +136,21 @@ for i in range(quant):
 
 media = soma / quant # Calcula a média final
 print(f"Média: {media:.2f}")
+
+
+MDC (usando while):
+
+# Troca automática se necessário (sempre a >= b)
+if a < b:
+    a, b = b, a  # Troca os valores
+
+while b != 0:
+    resto = a % b
+    a, b = b, resto
+
+
+MMC (a partir do MDC):
+
+mdc_valor = mdc(a, b)
+    
+(a * b) // mdc_valor
