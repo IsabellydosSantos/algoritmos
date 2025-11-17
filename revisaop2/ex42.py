@@ -38,5 +38,6 @@ def main():
         print(linha)
 
 
-    main()
+main()
+
 
