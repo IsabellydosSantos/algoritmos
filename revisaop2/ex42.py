@@ -14,9 +14,7 @@ def transposta(matriz):
     
     return transposta_matriz
 
-def main():
-    print("=== CÁLCULO DA MATRIZ TRANSPOSTA ===")
-    
+def main():    
     linhas = int(input("Digite o número de linhas da matriz: "))
     colunas = int(input("Digite o número de colunas da matriz: "))
     
@@ -41,3 +39,4 @@ def main():
 
 
     main()
+
