@@ -13,7 +13,6 @@ print("Responda as perguntas com 'sim' ou 'não':\n")
 for pergunta in perguntas:
     resposta = input(f"{pergunta} ").lower().strip()
     while resposta not in ['sim', 'não', 'nao']:
-        print("Por favor, responda apenas com 'sim' ou 'não'")
         resposta = input(f"{pergunta} ").lower().strip()
     respostas.append(resposta)
 
@@ -35,3 +34,4 @@ print(f"Classificação: {classificacao}")
 print("\n--- Resumo das respostas ---")
 for i, pergunta in enumerate(perguntas):
     print(f"{pergunta} → {respostas[i]}")
+
