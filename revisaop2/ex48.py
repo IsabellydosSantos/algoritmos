@@ -12,16 +12,17 @@ def verificar_matriz():
             print("Digite apenas números separados por espaço")
             return ()
 
-        if not lista_bi:
+    if not lista_bi:
+        return ()
+
+    colunas = len(lista_bi[0])
+
+    for linha in lista_bi:
+        if len(linha) != colunas:
+            print("Não é uma matriz: número de colunas inconsistente")
             return ()
 
-        colunas = len(lista_bi[0])
-
-        for linha in lista_bi:
-            if len(linha) != colunas:
-                return ()
-
-        return len(lista_bi), colunas
-
+    print(f"É uma matriz {len(lista_bi)}x{colunas}")
+    return len(lista_bi), colunas
 
 verificar_matriz()
