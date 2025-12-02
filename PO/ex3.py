@@ -43,10 +43,8 @@ def main():
             print("Digite um número natural (não negativo).")
             return
         
-        # Encontra os números primos
         menor_maior_igual, maior_menor_igual = encontra_primo(n)
         
-        # Exibe os resultados
         print(f"\nPara n = {n}:")
         
         if maior_menor_igual is not None:
@@ -56,7 +54,6 @@ def main():
         
         print(f"Menor número primo maior ou igual a n: {menor_maior_igual}")
         
-        # Verifica se n é primo
         if primo(n):
             print(f"Obs: {n} é primo")
         else:
